@@ -19,19 +19,24 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>Weather</title>
+    <title>Weather Dashboard</title>
   </head>
 
   <body>
 
-    <!-- header here -->
-    <div class="header">
-        Weather Dashboard
-    </div>
+ 
+    <!-- <div class="container"> -->
 
-    <div class="container">
+        <div class="jumbotron-fluid bg-transparent text-center">
+            <div class="container">
+                <h1 class="display-3">Weather Dashboard</h1>
+            </div>
+        </div>
+
+        <div class="container">
+        <!-- beginning -->
         <div class="row">
-            <div class="col-lg-g border-right id="cityCol">
+            <div class="col-lg-3 border-right" id="cityCol">
                 <br />
                 <h3>Search for a City: </h3>
                 <form class="form-inline mt-md-0">
@@ -41,7 +46,7 @@
                         placeholder="Search for a city"
                         aria-label="Search"
                         />
-                    <button class="btn btn-outline-dark my-2 my-ms-0" type="submit">Search</button>
+                    <button class="btn my-2 my-ms-0" type="submit">Search</button>
                 </form>
                 
                 <div id="cityView" class="cityView"></div>

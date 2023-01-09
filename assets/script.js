@@ -20,8 +20,7 @@ $(document).ready(function () {
     if (cities[0]) {
         getCity(cities[cities.length - 1]);
     }
-    citiesDisplay();
-
+    // citiesDisplay();
 
     $(".btn").on("click", function (event) {
         event.preventDefault();
@@ -103,7 +102,7 @@ function getUV(lat, lon) {
     var uvIndexURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon + "&cnt=1";
 
     $.ajax({ url: uvIndexURL, type: "GET" }).then(function (response) {
-        $("uv").text("UV-index : " + response[0].value);
+        $("#uv").text("UV-index: " + response[0].value);
     });
 }
 
