@@ -4,29 +4,34 @@ cities.reverse();
 
 function loadFromStorage(){
     cities = JSON.parse(localStorage.getItem("cities")) || [];
+    //from the storage, render the buttons
 }
 
 function saveToStorage() {
     localStorage.setItem("cities", JSON.stringify(cities));
+    citiesDisplay();
 }
 
 $(document).ready(function () {
     loadFromStorage();
+    console.log("document ready")
+    console.log(cities)
     if (cities[0]) {
         getCity(cities[cities.length - 1]);
     }
-    // citiesDisplay();
+    citiesDisplay();
 
     $(".btn").on("click", function (event) {
         event.preventDefault();
-
         var input = $(".form-control");
         var city = input.val();
+        if(!city){
+            return
+        }
         if (!cities.includes(city)) {
             cities.push(city);
             saveToStorage();
         }
-        citiesDisplay();
         getCity(city);
     });
 });
@@ -74,12 +79,11 @@ function citiesDisplay() {
     $("#cityView").html("");
     for (var i = 0; i < limit; i++) {
         var cityView = $("<div>");
-        cityView.addClass("row").css({
+        cityView.css({
             textAlign: "center",
             border: "1px solid white",
             height: "50px",
             lineHeight: "50px",
-            paddingLeft: "40px",
         });
         cityView.html(cities[i]);
         $("#cityView").prepend(cityView);

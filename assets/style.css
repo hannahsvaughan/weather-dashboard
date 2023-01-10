@@ -5,10 +5,13 @@ body {
 
 .col-lg-3 {
     background-color: #EAC7C7;
+    padding-top: 20px;
 }
 
 .col-lg-12 {
     background-color: #F7F5EB;
+    margin-bottom: 20px;
+    padding-left:20px
 }
 
 .form-inline {
@@ -18,7 +21,6 @@ body {
 }
 
 #todayWeather {
-    margin-top: 20px;
     margin-bottom: 20px;
     line-break: normal;
 }
@@ -26,6 +28,10 @@ body {
 #cityView {
     text-align: center;
     justify-content: center;
+}
+
+.card{
+    background-color: #D7E9B9 ;
 }
 
 h1, h2, h3, h4 {
