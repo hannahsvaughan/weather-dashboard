@@ -54,7 +54,7 @@ function getCity(city) {
         $("#hum").text("Humidity: " + response.main.humidity + " %");
         $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
 
-        // TO DO - Need to convert the temperature but idk how
+        // convert temp
         var tempFahr = (response.main.temp - 273.15) * 1.8 + 32;
         $(".tempFahr").text("Temperature (Kelvin) " + tempFahr);
         forecast(city);
@@ -89,7 +89,7 @@ function citiesDisplay() {
     }
 }
 
-//5 day forecast codes 
+//5 day forecast 
 function forecast(city) {
     var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
 
@@ -126,13 +126,11 @@ function forecast(city) {
             var weatherImage = $("<img>");
             weatherImage.attr("src", iconURL);
 
-
-
             var p1 = $("<p>").text("Temp: " + temp + "F");
             var p2 = $("<p>").text("Humidity: " + humidity + "%");
 
 
-            // appending the paragraph and image tags to myCard to show up 
+            // appending the paragraph and image tags to myCard  
             myCard.append(p);
             myCard.append(weatherImage);
             myCard.append(p1);

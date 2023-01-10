@@ -1,6 +1,10 @@
 body {
-    background-color: #4B749F;
-    font-family: "Josefin Sans", sans-serif;
+    background-color: #82AAE3;
+    font-family: "Chivo", sans-serif; 
+}
+
+.col-lg-3 {
+    background-color: #BFEAF5;
 }
 
 .form-inline {
@@ -13,7 +17,6 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     line-break: normal;
-    color: white;
 }
 
 #cityView {
@@ -22,13 +25,11 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: white;
     font-size: 30px;
-    font-family: "Josefin Sans", sans-serif;
+    font-family: "Chivo", sans-serif;
 }
 
 p {
-    /* font-weight: 500; */
     text-align: center;
 }
 
@@ -40,12 +41,6 @@ p {
 
 #forecast {
     margin-top:20px;
-}
-
-.btn {
-    border-color: white;
-    color: white;
-    border-width: 2px;
 }
 
 

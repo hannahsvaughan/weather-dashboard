@@ -14,10 +14,7 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Chivo:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>Weather Dashboard</title>
   </head>
@@ -25,7 +22,7 @@
   <body>
     <!-- <div class="container"> -->
 
-        <div class="jumbotron-fluid text-center">
+        <div class="jumbotron-fluid rounded-3 text-center">
             <div class="container">
                 <h1 class="display-3">Weather Dashboard</h1>
             </div>
@@ -34,7 +31,7 @@
         <div class="container">
         <!-- beginning -->
         <div class="row">
-            <div class="col-lg-3" id="cityCol">
+            <div class="col-lg-3 rounded-3" id="cityCol">
                 <br />
                 <h3>Search for a City: </h3>
                 <form class="form-inline mt-md-0">
@@ -44,7 +41,7 @@
                         placeholder="Search for a city"
                         aria-label="Search"
                         />
-                    <button class="btn my-2 my-ms-0" type="submit">Search</button>
+                    <button class="btn bg-secondary text-white my-2 my-ms-0" type="submit">Search</button>
                 </form>
                 
                 <div id="cityView" class="cityView"></div>
