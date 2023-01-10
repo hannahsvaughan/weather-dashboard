@@ -10,13 +10,12 @@ function saveToStorage() {
     localStorage.setItem("cities", JSON.stringify(cities));
 }
 
-
 $(document).ready(function () {
     loadFromStorage();
     if (cities[0]) {
         getCity(cities[cities.length - 1]);
     }
-    citiesDisplay();
+    // citiesDisplay();
 
     $(".btn").on("click", function (event) {
         event.preventDefault();
@@ -83,6 +82,9 @@ function citiesDisplay() {
             paddingLeft: "40px",
         });
         cityView.html(cities[i]);
+        $("#cityView").prepend(cityView);
+
+        cityView.attr("id", `${cities[i]}`);
         $(`#${cities[i]}`).on("click", function () {
             getCity($(this).text());
         });
@@ -95,7 +97,6 @@ function forecast(city) {
 
     $.ajax({ url: forecastURL, type: "GET"}).then(function (response) {
         var list = response.list;
-        console.log(response);
 
         $("#forecast").html("");
         for (var i = 39; i >= 0; i = i - 8) {
