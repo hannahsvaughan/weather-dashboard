@@ -2,10 +2,6 @@ const APIKey = "25ee199cf6b912ff000a1bab44ef907b";
 var cities = [];
 cities.reverse();
 
-// api.openweathermap.org/data/2.5/weather?q={city}&appid={25ee199cf6b912ff000a1bab44ef907b}
-
-// var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
 function loadFromStorage(){
     cities = JSON.parse(localStorage.getItem("cities")) || [];
 }
@@ -20,7 +16,7 @@ $(document).ready(function () {
     if (cities[0]) {
         getCity(cities[cities.length - 1]);
     }
-    // citiesDisplay();
+    citiesDisplay();
 
     $(".btn").on("click", function (event) {
         event.preventDefault();
@@ -29,11 +25,10 @@ $(document).ready(function () {
         var city = input.val();
         if (!cities.includes(city)) {
             cities.push(city);
-            saveToStorage
+            saveToStorage();
         }
         citiesDisplay();
         getCity(city);
-
     });
 });
 
@@ -62,9 +57,7 @@ function getCity(city) {
         // TO DO - Need to convert the temperature but idk how
         var tempFahr = (response.main.temp - 273.15) * 1.8 + 32;
         $(".tempFahr").text("Temperature (Kelvin) " + tempFahr);
-        getUV(response.coord.lat, response.coord.lon);
         forecast(city);
-        // input.val("");
         });
 }
 
@@ -94,16 +87,6 @@ function citiesDisplay() {
             getCity($(this).text());
         });
     }
-}
-
-//maybe need get UV function here
-
-function getUV(lat, lon) {
-    var uvIndexURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + APIKey + "&lat=" + lat + "&lon=" + lon + "&cnt=1";
-
-    $.ajax({ url: uvIndexURL, type: "GET" }).then(function (response) {
-        $("#uv").text("UV-index: " + response[0].value);
-    });
 }
 
 //5 day forecast codes 
@@ -159,10 +142,3 @@ function forecast(city) {
         }
     });
 }
- 
-
-
-//creating a p tag with the response item
-
-//appenign the paragraph and image to mycard 
-
